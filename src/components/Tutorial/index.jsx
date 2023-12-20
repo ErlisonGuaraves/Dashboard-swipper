@@ -1,9 +1,28 @@
 import "./Tutorial.css"
 
 import InstructionsIcon from "../../assets/instructions.png"
+import LogisticaDash from "../../assets/LogisticaDash.png"
+import GlpiDash from "../../assets/glpiDash.png"
+
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+import { Pagination } from 'swiper/modules';
 
 
 function Tutorial(){
+
+    const pagination = {
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + '</span>';
+        },
+      };
+
     return(
         <main className="container">
             <div className="content-instructions">
@@ -17,7 +36,14 @@ function Tutorial(){
                 </ol>
             </div>
             <div className="content-example">
-
+                <Swiper
+                    pagination={pagination}
+                    modules={[Pagination]}
+                    className="mySwiper"
+                >
+                    <SwiperSlide> <img src={LogisticaDash} alt="" /></SwiperSlide>           
+                    <SwiperSlide> <img src={GlpiDash} alt="" /></SwiperSlide>           
+            </Swiper>
             </div>
         </main>
     )
