@@ -4,8 +4,12 @@
     width: 100%;
 }
 
+
+
 .content-instructions{
+    margin-top: 40px;
     margin-left: 12rem;
+    width: 100%;
 
 }
 
@@ -29,7 +33,7 @@
     margin-top: 30px;
 }
 .content-example{
-  width: 720px;
+  width: 100%;
   margin-top: 30px;
   margin-left: 12rem;
 }
