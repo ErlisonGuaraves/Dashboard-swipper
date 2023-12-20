@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.content-instructions{
+    margin-left: 12rem;
+
+}
+
+.content-instructions img{
+    width: 2rem;
+}
+
+.title{
+    font-weight: bold;
+}
+
+.instructions li{
+    margin-top: 8px;
+}
+
+.instructions a{
+    color: blueviolet;
+}
+
+.instructions li:first-child{
+    margin-top: 30px;
+}
+.content-example{
+
+}

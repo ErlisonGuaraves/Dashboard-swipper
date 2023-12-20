@@ -5,7 +5,7 @@ import Modal from "./components/Modal"
 function App() {
 
   return (
-    <div>
+    <div className="container">
       <Modal/>
       <Navbar/>
       <Tutorial/>
