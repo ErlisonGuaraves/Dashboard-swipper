@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className="container">
-      <Modal/>
+      {/* <Modal/> */}
       <Navbar/>
       <Tutorial/>
     </div>
