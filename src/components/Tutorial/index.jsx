@@ -24,7 +24,7 @@ function Tutorial(){
       };
 
     return(
-        <main className="container">
+        <main id="container">
             <div className="content-instructions">
                 <h1 className="title">Instruções <img src={InstructionsIcon} alt="Ícone que representa as instruções" /> </h1>
                 <ol className="instructions">
