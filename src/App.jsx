@@ -6,8 +6,7 @@ import "./App.css"
 function App() {
 
   return (
-    <div className="container">
-      <Modal/>
+    <div id="container">
       <Navbar/>
       <Tutorial/>
     </div>
