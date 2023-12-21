@@ -1,21 +1,17 @@
-import Navbar from "./components/Navbar"
-import Tutorial from "./components/Tutorial"
-import Modal from "./components/Modal"
-import "./App.css"
+import Main from "./components/Main";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+import "./App.css";
 
 function App() {
-
   return (
-
-      <div id="container">
-    
-      {/* <Modal/> */}
-
-      <Navbar/>
-      
-      <Tutorial/>
+    <div id="container">
+      <Header />
+      <Main />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

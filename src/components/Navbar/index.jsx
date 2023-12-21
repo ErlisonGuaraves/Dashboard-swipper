@@ -7,7 +7,7 @@ import PowerBiLogo from "../../assets/icons/power-bi.png"
 
 function MenuNavbar(){
     return (
-        <Navbar id="container" className="bg-body-tertiary justify-content-between">
+      <Navbar id="container" className="bg-body-tertiary">
           <img src={PowerBiLogo} alt="DashboardSwiper" />
           <Row className="w-100 justify-content-end">
             <Col xs="auto">
