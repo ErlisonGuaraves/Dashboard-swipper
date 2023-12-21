@@ -5,10 +5,11 @@
     padding: 0 8rem;
 }
 
-#container img{
-    width: 4rem;
+#container-nav .plus-icon{
+    height: 15px;
+    width: 15px;
 }
 
-h1{
-    font-size: 28px;
+#container img{
+    width: 4rem;
 }

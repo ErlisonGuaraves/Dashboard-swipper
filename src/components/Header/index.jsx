@@ -1,10 +1,10 @@
 import Navbar from "../Navbar"
 
-const Header = () =>{
+const Header = ({handleShow}) =>{
 
     return(
         <header>
-            <Navbar />
+            <Navbar handleShow={handleShow}/>
         </header>
     )
 }
