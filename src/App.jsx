@@ -1,7 +1,6 @@
-import Main from "./components/Main";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import ModalComponent from "./components/Modal";
+import Home from "./pages/Home";
+import Presentation from "./pages/Presentation"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -10,17 +9,22 @@ import "./App.css";
 function App() {
 
   const [show, setShow] = useState(false);
+  const [links, setLinks] = useState([])
+  const [time, setTime] = useState(20000)
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
   
   return (
-    <div id="container">
-      <Header handleShow={handleShow}/>
-      <ModalComponent show={show} handleClose={handleClose} />
-      <Main />
-      <Footer />
-    </div>
+    <>
+   <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<Home show={show} setLinks={setLinks} setTime={setTime} handleClose={handleClose} handleShow={handleShow} />} />
+          <Route path="/presentation" element={<Presentation time={time} links={links}/>} />
+      </Routes>
+   </BrowserRouter>
+
+    </>
   );
 }
 

@@ -1,9 +1,10 @@
 import Navbar from "../Navbar"
+import "./style.css"
 
 const Header = ({handleShow}) =>{
 
     return(
-        <header>
+        <header className="header-container">
             <Navbar handleShow={handleShow}/>
         </header>
     )

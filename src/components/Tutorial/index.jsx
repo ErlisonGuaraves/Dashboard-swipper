@@ -1,7 +1,7 @@
 import "./Tutorial.css"
 
 import InstructionsIcon from "../../assets/instructions.png"
-import LogisticaDash from "../../assets/LogisticaDash.png"
+import LogisticaDash from "../../assets/logisticaDash.png"
 import GlpiDash from "../../assets/glpiDash.png"
 
 import React, { useRef, useState } from 'react';
@@ -29,21 +29,14 @@ function Tutorial(){
                 <h1 className="title">Instruções <img src={InstructionsIcon} alt="Ícone que representa as instruções" /> </h1>
                 <ol className="instructions">
                     <li>Abra o relatório desejado no <a href="https://app.powerbi.com/"  >Power BI Service</a>.</li>
-                    <li>Clique em "File" (Arquivo) no canto superior esquerdo.</li>
-                    <li>Selecione "Publish to web" (Publicar na web).</li>
+                    <li>Clique em "Ficheiro" (Arquivo) no canto superior esquerdo.</li>
+                    <li>Selecione "Codigo Incorporado".</li>
                     <li>Escolha as opções de publicação conforme necessário, como o período de atualização e a interatividade.</li>
-                    <li>Clique em "Create" (Criar) e copie o código embed gerado.</li>
+                    <li>Copie o código que inicia com {`<iframe>`}</li>
                 </ol>
             </div>
             <div className="content-example">
-                <Swiper
-                    pagination={pagination}
-                    modules={[Pagination]}
-                    className="mySwiper"
-                >
-                    <SwiperSlide> <img src={LogisticaDash} alt="" /></SwiperSlide>           
-                    <SwiperSlide> <img src={GlpiDash} alt="" /></SwiperSlide>           
-            </Swiper>
+               
             </div>
         </main>
     )

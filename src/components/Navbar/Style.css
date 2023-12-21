@@ -1,13 +1,29 @@
 #container-nav{
     display: flex;
+    height: 100px;
     flex-direction: row !important;
     justify-content: space-between;
     padding: 0 8rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 100%;
 }
 
 #container-nav .plus-icon{
     height: 15px;
     width: 15px;
+}
+
+#container-nav .container-button{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container-nav .container-button img{
+    width: 20px;
+    height: 20px;
 }
 
 #container img{
