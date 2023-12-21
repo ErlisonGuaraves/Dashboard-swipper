@@ -1,3 +1,10 @@
+#container-nav{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+    padding: 0 8rem;
+}
+
 #container img{
     width: 4rem;
 }

@@ -7,14 +7,10 @@ import PowerBiLogo from "../../assets/icons/power-bi.png"
 
 function MenuNavbar(){
     return (
-      <Navbar id="container" className="bg-body-tertiary">
+      <Navbar id="container-nav" className="bg-body-tertiary">
           <img src={PowerBiLogo} alt="DashboardSwiper" />
-          <Row className="w-100 justify-content-end">
-            <Col xs="auto">
-                <Button type="submit" variant="primary" className="rounded-circle">+</Button>
-            </Col>
-          </Row>
-        </Navbar>
+          <Button type="submit" variant="primary" className="rounded-circle">+</Button>
+      </Navbar>
     );
     
 }
