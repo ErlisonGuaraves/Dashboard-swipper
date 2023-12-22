@@ -14,7 +14,7 @@ import { collection, addDoc } from "firebase/firestore";
 
 import DashboardIcon from "../../assets/icons/dashboard.svg"
 
-  function ModalComponent({show, handleClose, setTime, setLinks}) {
+  function ModalComponent({show, handleClose}) {
 
   const navigate = useNavigate()
   const [name, setName] = useState()
@@ -44,7 +44,7 @@ import DashboardIcon from "../../assets/icons/dashboard.svg"
       return
     }
 
-    handleClose()
+    handleClose();
   }
 
   return (

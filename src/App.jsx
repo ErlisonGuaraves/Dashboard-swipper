@@ -21,8 +21,9 @@ function App() {
    <BrowserRouter>
       <Routes>
           <Route path="/" >
-                <Route index element={<Home show={show} setLinks={setLinks} setTime={setTime} handleClose={handleClose} handleShow={handleShow} />}/>
-                <Route path="/dashboards" element={<Dashboards/>} />
+            {/* show, handleShow, handleClose, setTime, setLinks */}
+                <Route index element={<Home show={show} handleShow={handleShow} handleClose={handleClose}  />}/>
+                <Route path="/dashboards" element={<Dashboards handleShow={handleShow}/>} />
           </Route>
           <Route path="/presentation/:id" element={<Presentation time={time} links={links}/>} />
       </Routes>

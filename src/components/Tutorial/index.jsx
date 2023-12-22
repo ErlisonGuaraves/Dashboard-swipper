@@ -28,7 +28,7 @@ function Tutorial(){
             <div className="content-instructions">
                 <h1 className="title">Instruções <img src={InstructionsIcon} alt="Ícone que representa as instruções" /> </h1>
                 <ol className="instructions">
-                    <li>Abra o relatório desejado no <a href="https://app.powerbi.com/"  >Power BI Service</a>.</li>
+                    <li>Abra o relatório desejado no <a href="https://app.powerbi.com/" target="_blank" >Power BI Service</a>.</li>
                     <li>Clique em "Ficheiro" (Arquivo) no canto superior esquerdo.</li>
                     <li>Selecione "Codigo Incorporado".</li>
                     <li>Escolha as opções de publicação conforme necessário, como o período de atualização e a interatividade.</li>

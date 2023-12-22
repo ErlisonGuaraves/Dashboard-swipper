@@ -1,10 +1,11 @@
-import Navbar from "../Tutorial"
+import Tutorial from "../Tutorial";
+
 
 const Main = () =>{
 
     return(
         <main>
-            <Navbar />
+            <Tutorial />
         </main>
     )
 }
