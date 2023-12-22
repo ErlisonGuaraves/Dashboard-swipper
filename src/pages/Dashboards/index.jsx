@@ -42,7 +42,7 @@ const Dashboards = () => {
       <Header/>
       <div id="container-dashboards" >
       {dashs &&dashs.map(dash => (
-          <Link to={`/presentation/${dash.id}`} >
+          <a href={`http://localhost:5173/presentation/${dash.id}`} target="_blank" >
               <Card className="container-cards">
               <Card.Body>
                 <Card.Title>{dash.dados.nome}</Card.Title>
@@ -52,12 +52,11 @@ const Dashboards = () => {
                 </div>
               </Card.Body>
             </Card>
-            </Link>
+            </a>
           ))
         }
         
 
-       
        
        {!dashs && (
             <div className="animation-container" > 
