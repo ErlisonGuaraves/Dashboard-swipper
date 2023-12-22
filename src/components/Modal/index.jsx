@@ -1,3 +1,5 @@
+import { db } from "../../connection/firebase"
+
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -5,6 +7,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Alert from 'react-bootstrap/Alert';
+import { collection, addDoc } from "firebase/firestore";
 
 
 // assets
@@ -14,34 +17,34 @@ import DashboardIcon from "../../assets/icons/dashboard.svg"
   function ModalComponent({show, handleClose, setTime, setLinks}) {
 
   const navigate = useNavigate()
-
+  const [name, setName] = useState()
   const [linksModal1, setLinksModal1] = useState("")
   const [linksModal2, setLinksModal2] = useState("")
   const [timeModal, setTimeModal] = useState("")
   const[messageError, setMessageError] = useState("")
 
-  function handleSubmit(e){
+  async function handleSubmit(e){
     e.preventDefault()
 
-    if(linksModal1 != "" && linksModal2 != "" && Number.isInteger(Number(timeModal))){
-      setTime(timeModal)
-      setLinks((links) => {
-        return [
-          ...links,
-          linksModal1,
-          linksModal2
-        ]
-      })
+    if(linksModal1 != "" && linksModal2 != "" & name != "" && Number.isInteger(Number(timeModal))){
+      try{
+        const docRef = await addDoc(collection(db, "dashboards"), {
+          nome: name,
+          links: [linksModal1, linksModal2],
+          time: timeModal
+        });
+
+      }
+      catch(err){
+      setMessageError("Alguma coisa no servidor")
+        
+      }
     }else{
-      setMessageError("Alguma coisa deu errado, verifique os campos")
+      setMessageError("Alguma coisa deu errado, verifique os campos!")
       return
     }
 
-    
-
     handleClose()
-    navigate("/presentation")
-
   }
 
   return (
@@ -54,6 +57,7 @@ import DashboardIcon from "../../assets/icons/dashboard.svg"
         <InputGroup className="mb-3">
               <InputGroup.Text id="basic-addon1"><img src={DashboardIcon} style={{width: "20px"}}/> </InputGroup.Text>
               <Form.Control
+                onChange={(e) => setName(e.target.value)}
                 placeholder="Nome de apresentação"
                 aria-label="presentation"
                 aria-describedby="basic-addon1"
@@ -94,7 +98,7 @@ import DashboardIcon from "../../assets/icons/dashboard.svg"
             setMessageError("")
             handleClose()
           }}>
-            Close
+            Fechar
           </Button>
           <Button variant="primary" onClick={handleSubmit}>
             Iniciar

@@ -1,5 +1,6 @@
 import Home from "./pages/Home";
 import Presentation from "./pages/Presentation"
+import Dashboards from "./pages/Dashboards";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { useState } from "react";
@@ -19,8 +20,11 @@ function App() {
     <>
    <BrowserRouter>
       <Routes>
-          <Route path="/" element={<Home show={show} setLinks={setLinks} setTime={setTime} handleClose={handleClose} handleShow={handleShow} />} />
-          <Route path="/presentation" element={<Presentation time={time} links={links}/>} />
+          <Route path="/" >
+                <Route index element={<Home show={show} setLinks={setLinks} setTime={setTime} handleClose={handleClose} handleShow={handleShow} />}/>
+                <Route path="/dashboards" element={<Dashboards/>} />
+          </Route>
+          <Route path="/presentation/:id" element={<Presentation time={time} links={links}/>} />
       </Routes>
    </BrowserRouter>
 

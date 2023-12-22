@@ -10,7 +10,7 @@ const Home = ({show, handleShow, handleClose, setTime, setLinks}) => {
         <ModalComponent show={show} handleClose={handleClose} setLinks={setLinks} setTime={setTime} />
         <Main />
         <Footer />
-      </div>
+  </div>
   )
 }
 
