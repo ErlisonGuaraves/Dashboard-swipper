@@ -4,15 +4,23 @@ import { collection, query, getDocs } from "firebase/firestore";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import CardComponent from "../../components/Card"
+import { useContext } from "react";
+import ModalContext from "../../contexts/ModalContext";
+import ModalComponent from "../../components/Modal";
 
 import "./styles.css"
-import { Link } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 
 
-const Dashboards = ({handleShow}) => {
+const Dashboards = () => {
 
   const [dashs, setDashs] = useState([])
+
+  const [showModal, setShowModal] = useContext(ModalContext)
+
+
+  const handleShow = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
 
   useEffect(() => {
     async function getData(){
@@ -21,6 +29,8 @@ const Dashboards = ({handleShow}) => {
         const q = query(collection(db, "dashboards"));
         const querySnapshot = await getDocs(q);
         let dados = [];
+
+
         querySnapshot.forEach((doc) => {
             dados.push({
               "id": doc.id,
@@ -29,7 +39,7 @@ const Dashboards = ({handleShow}) => {
         });
         setDashs(dados)
       }catch(err){
-
+        console.log(err)
       }
     }
       
@@ -39,20 +49,14 @@ const Dashboards = ({handleShow}) => {
 
   return(
     <main id="container">
-
       <Header handleShow={handleShow}/>
-
+      <ModalComponent setDashs={setDashs} show={showModal} handleClose={handleClose}/>
       <div id="container-dashboards" >
-      {dashs &&dashs.map(dash => (
-          <a href={`http://localhost:5173/presentation/${dash.id}`} target="_blank" >
-
-              <CardComponent dash={dash} />
-            </a>
+      {dashs && dashs.map(dash => (
+              <CardComponent dash={dash} setDashs={setDashs} />
           ))
         }
         
-
-       
        {!dashs && (
             <div className="animation-container" > 
             <Spinner animation="border" role="status">

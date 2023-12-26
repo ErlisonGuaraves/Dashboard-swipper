@@ -36,7 +36,7 @@ import DashboardIcon from "../../assets/icons/dashboard.svg"
 
       }
       catch(err){
-      setMessageError("Alguma coisa no servidor")
+      setMessageError("Alguma coisa de errado no servidor")
         
       }
     }else{

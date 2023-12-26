@@ -35,9 +35,6 @@ function Tutorial(){
                     <li>Copie o código que inicia com {`<iframe>`}</li>
                 </ol>
             </div>
-            <div className="content-example">
-               
-            </div>
         </main>
     )
 }

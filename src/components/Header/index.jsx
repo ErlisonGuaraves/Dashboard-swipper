@@ -1,7 +1,7 @@
 import Navbar from "../Navbar"
 import "./style.css"
 
-const Header = ({handleShow}) =>{
+const Header = () =>{
 
     return(
         <header className="header-container">

@@ -1,0 +1,27 @@
+#container-cards{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#container-cards .actions{
+  display: flex;
+  gap: 1rem;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+#container-cards #container-iframe{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  
+}
+
+#container-iframe img{
+  width: 200px;
+}
