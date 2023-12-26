@@ -59,7 +59,6 @@ const Presentation = ({links, time}) =>{
               modules={[Autoplay, Pagination, Navigation]}
               className="mySwiper ajuste"
               >
-                
                   <SwiperSlide id='presentation1' className="custom-slide ajuste"></SwiperSlide>
                   <SwiperSlide id='presentation2' className="custom-slide ajuste"></SwiperSlide>
               </Swiper>      

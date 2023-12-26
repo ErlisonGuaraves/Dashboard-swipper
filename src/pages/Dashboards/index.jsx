@@ -16,8 +16,12 @@ const Dashboards = () => {
 
   const [dashs, setDashs] = useState([])
 
-  const [showModal, setShowModal] = useContext(ModalContext)
+  console.log(dashs)
 
+  const [showModal, setShowModal] = useContext(ModalContext)
+  const [showMessage, setShowMessage] = useState(false)
+
+  console.log(showModal)
 
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
@@ -25,27 +29,37 @@ const Dashboards = () => {
   useEffect(() => {
     async function getData(){
       try{
-        setDashs([])
-        const q = query(collection(db, "dashboards"));
-        const querySnapshot = await getDocs(q);
-        let dados = [];
+          console.log("no try")
+          setDashs([])
+          setShowMessage(false)
+    
+          const q = query(collection(db, "dashboards"));
+          const querySnapshot = await getDocs(q);
+          let dados = [];
+  
+  
+          querySnapshot.forEach((doc) => {
+              dados.push({
+                "id": doc.id,
+                "dados": doc.data()
+              })
+          });
+
+          setDashs(dados)      
 
 
-        querySnapshot.forEach((doc) => {
-            dados.push({
-              "id": doc.id,
-              "dados": doc.data()
-            })
-        });
-        setDashs(dados)
+  
       }catch(err){
         console.log(err)
+        console.log("no catch")
       }
     }
       
     getData()
   }, [])
 
+
+  console.log(showMessage)
 
   return(
     <main id="container">
@@ -56,14 +70,7 @@ const Dashboards = () => {
               <CardComponent dash={dash} setDashs={setDashs} />
           ))
         }
-        
-       {!dashs && (
-            <div className="animation-container" > 
-            <Spinner animation="border" role="status">
-                Loading
-           </Spinner>
-           </div>
-          )}
+       {showMessage && (<h1>Nenhum dashboard encontrado</h1>)}
             
       </div>
       <Footer />

@@ -16,7 +16,7 @@ import { collection, addDoc } from "firebase/firestore";
 
 import DashboardIcon from "../../assets/icons/dashboard.svg"
 
-  function ModalComponent({show, handleClose}) {
+  function ModalComponent({show, handleClose, setDashs}) {
 
 
   const navigate = useNavigate()
@@ -36,6 +36,21 @@ import DashboardIcon from "../../assets/icons/dashboard.svg"
           links: [linksModal1, linksModal2],
           time: timeModal
         });
+
+
+        setDashs((dash) => {
+          return [
+            ...dash,
+            {
+              "id": docRef.id,
+              "dados": { 
+                "nome": name,
+                "links": [linksModal1, linksModal2],
+                "time": timeModal
+              }
+            }
+          ]
+        })
 
       }
       catch(err){
