@@ -45,7 +45,7 @@ const Presentation = ({links, time}) =>{
 
  
   return(
-      <main id='container-presentation'>
+      <main id='container-apresentation'>
               <Swiper
               spaceBetween={30}
               centeredSlides={true}
@@ -57,10 +57,11 @@ const Presentation = ({links, time}) =>{
                 clickable: true,
               }}
               modules={[Autoplay, Pagination, Navigation]}
-              className="mySwiper"
+              className="mySwiper ajuste"
               >
-                  <SwiperSlide id='presentation1'></SwiperSlide>
-                  <SwiperSlide id='presentation2'></SwiperSlide>
+                
+                  <SwiperSlide id='presentation1' className="custom-slide ajuste"></SwiperSlide>
+                  <SwiperSlide id='presentation2' className="custom-slide ajuste"></SwiperSlide>
               </Swiper>      
       </main>
   )

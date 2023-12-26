@@ -34,14 +34,12 @@ const CardComponent = ({dash, setDashs}) => {
   return (
       <Card>
       <Card.Body id="container-cards">
-        <div id="container-iframe">
-            <img src={Dashboard} />
-        </div>
+        
         <Card.Title>{dash.dados.nome}</Card.Title>
         <Card.Subtitle>Tempo de Transição: {dash.dados.time}</Card.Subtitle>
         <div className="actions">
           <Button variant="danger" onClick={deleteCard}>Excluir</Button>
-          <a variant="primary"  type='button' href={`http://localhost:5173/presentation/${dash.id}`}>Apresentar</a>
+          <a variant="primary" target='_blank' type='button' href={`http://localhost:5173/presentation/${dash.id}`}>Apresentar</a>
         </div>
       </Card.Body>
     </Card>    
