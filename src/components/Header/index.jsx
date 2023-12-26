@@ -5,7 +5,7 @@ const Header = () =>{
 
     return(
         <header className="header-container">
-            <Navbar handleShow={handleShow}/>
+            <Navbar/>
         </header>
     )
 }

@@ -10,11 +10,14 @@ import Alert from 'react-bootstrap/Alert';
 import { collection, addDoc } from "firebase/firestore";
 
 
+
+
 // assets
 
 import DashboardIcon from "../../assets/icons/dashboard.svg"
 
   function ModalComponent({show, handleClose}) {
+
 
   const navigate = useNavigate()
   const [name, setName] = useState()

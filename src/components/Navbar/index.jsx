@@ -1,6 +1,8 @@
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import { NavLink } from "react-bootstrap";
+import { useContext } from "react";
+import ModalContext from "../../contexts/ModalContext";
 
 import "./Style.css";
 
@@ -8,7 +10,12 @@ import PowerBiLogo from "../../assets/icons/power-bi.png";
 import PlusIcon from "../../assets/icons/plus-circle.svg";
 import { Link } from "react-router-dom";
 
-function MenuNavbar({handleShow}) {
+function MenuNavbar() {
+
+  const [showModal, setShowModal] = useContext(ModalContext)
+
+  const handleShow = () => setShowModal(true);
+
   return (
  
         <Navbar id="container-nav" className="">
