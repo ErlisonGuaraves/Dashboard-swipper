@@ -1,9 +1,8 @@
 {
     "routes": [
-      { "src": "/", "dest": "/index.html" },
+      { "src": "/", "dest": "/" },
       { "src": "/dashboards", "dest": "/dashboards" },
-      { "src": "/presentation/:id", "dest": "/index.html" },
-      { "src": "/(.*)", "dest": "/index.html" }
+      { "src": "/presentation/:id", "dest": "/presentation/:id" }
     ]
   }
   
