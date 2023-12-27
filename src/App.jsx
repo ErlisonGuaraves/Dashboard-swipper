@@ -1,9 +1,7 @@
 import Home from "./pages/Home";
 import Presentation from "./pages/Presentation"
 import Dashboards from "./pages/Dashboards";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ModalContext from "./contexts/ModalContext";
-import { useContext } from "react";
+import { HashRouter as BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 import "./App.css";
