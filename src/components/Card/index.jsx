@@ -29,7 +29,7 @@ const CardComponent = ({ dash, setDashs }) => {
             variant="primary"
             target="_blank"
             type="button"
-            href={`http://localhost:5173/presentation/${dash.id}`}
+            href={`/presentation/${dash.id}`}
           >
             Apresentar
           </a>
