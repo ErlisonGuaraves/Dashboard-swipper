@@ -23,7 +23,7 @@ function Tutorial(){
     return(
         <main id="container">
             <div className="content-instructions">
-                <h1 className="title">Instruções <img src={InstructionsIcon} alt="Ícone que representa as instruções" /> </h1>
+                <h1 className="title">Instruções para Criar sua Apresentação <img src={InstructionsIcon} alt="Ícone que representa as instruções" /> </h1>
                 <ol className="instructions">
                     <li>Abra o relatório desejado no <a href="https://app.powerbi.com/" target="_blank" >Power BI Service</a> Copie o código que inicia com {`<iframe>`}.</li>
                     <li>Clique No botão + para Criar Apresentação</li>
