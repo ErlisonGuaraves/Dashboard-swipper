@@ -1,17 +1,14 @@
 import "./Tutorial.css"
 
 import InstructionsIcon from "../../assets/instructions.png"
-import LogisticaDash from "../../assets/logisticaDash.png"
-import GlpiDash from "../../assets/glpiDash.png"
+
 
 import React, { useRef, useState } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { Pagination } from 'swiper/modules';
 
 
 function Tutorial(){
@@ -28,15 +25,14 @@ function Tutorial(){
             <div className="content-instructions">
                 <h1 className="title">Instruções <img src={InstructionsIcon} alt="Ícone que representa as instruções" /> </h1>
                 <ol className="instructions">
-                    <li>Abra o relatório desejado no <a href="https://app.powerbi.com/" target="_blank" >Power BI Service</a>.</li>
-                    <li>Clique em "Ficheiro" (Arquivo) no canto superior esquerdo.</li>
-                    <li>Selecione "Codigo Incorporado".</li>
-                    <li>Escolha as opções de publicação conforme necessário, como o período de atualização e a interatividade.</li>
-                    <li>Copie o código que inicia com {`<iframe>`}</li>
+                    <li>Abra o relatório desejado no <a href="https://app.powerbi.com/" target="_blank" >Power BI Service</a> Copie o código que inicia com {`<iframe>`}.</li>
+                    <li>Clique No botão + para Criar Apresentação</li>
+                    <li>Vá em Dashboards</li>
+                    <li>Clique em Apresentar</li>
                 </ol>
             </div>
         </main>
     )
 }
 
-export default Tutorial
+export default Tutorial;
