@@ -8,6 +8,12 @@ import "./App.css";
 import { ModalContextProvider } from "./contexts/ModalContext";
 
 function App() {
+
+
+  const [links, setLinks] = useState([])
+  const [time, setTime] = useState(20000)
+
+  
   return (
     <>
    <BrowserRouter>
