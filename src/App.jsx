@@ -1,21 +1,13 @@
 import Home from "./pages/Home";
 import Presentation from "./pages/Presentation"
 import Dashboards from "./pages/Dashboards";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ModalContext from "./contexts/ModalContext";
-import { useContext } from "react";
+import { HashRouter as BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 import "./App.css";
 import { ModalContextProvider } from "./contexts/ModalContext";
 
 function App() {
-
-
-  const [links, setLinks] = useState([])
-  const [time, setTime] = useState(20000)
-
-  
   return (
     <>
    <BrowserRouter>
