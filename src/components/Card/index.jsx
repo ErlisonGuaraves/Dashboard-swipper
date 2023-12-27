@@ -27,7 +27,6 @@ const CardComponent = ({ dash, setDashs }) => {
           </Button>
           <a
             variant="primary"
-            target="_blank"
             type="button"
             href={`/presentation/${dash.id}`}
           >
