@@ -2,6 +2,6 @@
     "routes": [
         {"src": "/", "dest": "/"},
         {"src": "/dashboards", "dest": "/dashboards"},
-        {"src": "/presentation/:id", "dest": "/presentation/:id"}
+        {"src": "/presentation/:id", "dest": "index.html"}
     ]
 }
