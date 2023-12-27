@@ -1,43 +1,40 @@
+// Firestore database instance
 import { db } from '../../connection/firebase';
 
-// Import Swiper React components
+//  Swiper 
 import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
+import { Autoplay, Navigation, Pagination} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+// Styles
+
 import './styles.css';
 
-// import required modules
-import { Autoplay, Navigation, Pagination} from 'swiper/modules';
+// Hooks
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useFetchData } from '../../hooks/useFetchData';
 
-import { doc, getDoc } from "firebase/firestore";
-
-
-
-
-const Presentation = ({links, time}) =>{
+const Presentation = () =>{
 
   const [presentation, setPresentation] = useState()
-  const parametros = useParams()
-  
- 
+  const { getDashById } = useFetchData()
+  const params = useParams()
+
 
   useEffect(() => {
 
     const present1 = document.getElementById("presentation1")
     const present2 = document.getElementById("presentation2")
-    
+
     async function getPresentations(){
-      setPresentation("")
-      const docRef = doc(db, "dashboards", parametros.id);
-      const docSnap = await getDoc(docRef);
-      setPresentation(docSnap.data())
-      present1.innerHTML = docSnap.data().links[0]
-      present2.innerHTML = docSnap.data().links[1]
+      const dash = await getDashById(params.id) 
+      console.log(dash)
+      present1.innerHTML = dash.links[0]
+      present2.innerHTML = dash.links[1]
+      setPresentation(dash)
     }
 
     getPresentations()
@@ -47,6 +44,7 @@ const Presentation = ({links, time}) =>{
   return(
       <main id='container-apresentation'>
               <Swiper
+              id='swiper'
               spaceBetween={30}
               centeredSlides={true}
               autoplay={{
@@ -62,6 +60,8 @@ const Presentation = ({links, time}) =>{
                   <SwiperSlide id='presentation1' className="custom-slide ajuste"></SwiperSlide>
                   <SwiperSlide id='presentation2' className="custom-slide ajuste"></SwiperSlide>
               </Swiper>      
+
+              
       </main>
   )
 }

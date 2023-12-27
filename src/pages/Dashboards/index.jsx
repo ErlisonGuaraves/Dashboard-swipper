@@ -1,53 +1,40 @@
-import { useEffect, useState } from "react";
+// firestore database instance
 import { db } from "../../connection/firebase";
-import { collection, query, getDocs } from "firebase/firestore";
+
+// components
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import CardComponent from "../../components/Card";
-import { useContext } from "react";
 import ModalContext from "../../contexts/ModalContext";
 import ModalComponent from "../../components/Modal";
 
+// hooks
+import { useFetchData } from "../../hooks/useFetchData";
+import { useContext } from "react";
+import { useEffect } from "react";
+
+// styles
 import "./styles.css";
-import Spinner from 'react-bootstrap/Spinner';
 
 const Dashboards = () => {
-  const [dashs, setDashs] = useState([]);
+
+  const {dashs, getAllDashs, setDashs} = useFetchData()
   const [showModal, setShowModal] = useContext(ModalContext);
 
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
 
   useEffect(() => {
-    async function getData() {
-      try {
-        const q = query(collection(db, "dashboards"));
-        const querySnapshot = await getDocs(q);
-        let dados = [];
-
-        querySnapshot.forEach((doc) => {
-          dados.push({
-            id: doc.id,
-            dados: doc.data()
-          });
-        });
-
-        setDashs(dados);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-
-    getData();
+    getAllDashs()
   }, []);
 
   return (
     <main id="container">
       <Header handleShow={handleShow} />
-      <ModalComponent setDashs={setDashs} show={showModal} handleClose={handleClose} />
+      <ModalComponent  show={showModal} handleClose={handleClose} setDashs={setDashs} />
       <div id="container-dashboards">
         {dashs.length > 0 ? (
-          dashs.map((dash) => <CardComponent dash={dash} setDashs={setDashs} />)
+          dashs.map((dash) =>  <CardComponent dash={dash} setDashs={setDashs} />)
         ) : (
           <h1>Nenhum dashboard encontrado</h1>
         )}

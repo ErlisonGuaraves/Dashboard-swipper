@@ -1,0 +1,9 @@
+#button-presentation{
+    display: grid;
+    place-items: center;
+}
+
+#spinner-loading{
+    width: 24px;
+    height: 24px;
+}

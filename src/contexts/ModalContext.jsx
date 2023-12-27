@@ -1,7 +1,5 @@
 import { createContext, useState } from "react";
 
-
-
 const ModalContext = createContext()
 
 const ModalContextProvider = ({children}) => {
