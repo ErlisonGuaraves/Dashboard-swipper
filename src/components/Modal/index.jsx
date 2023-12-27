@@ -8,8 +8,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Alert from 'react-bootstrap/Alert';
 import { collection, addDoc } from "firebase/firestore";
-import Spinner from 'react-bootstrap/Spinner'
-import "./styles.css"
+
+
+
 
 // assets
 
@@ -17,19 +18,16 @@ import DashboardIcon from "../../assets/icons/dashboard.svg"
 
   function ModalComponent({show, handleClose, setDashs}) {
 
-  const [loading, setLoading] = useState(false) 
 
+  const navigate = useNavigate()
   const [name, setName] = useState()
   const [linksModal1, setLinksModal1] = useState("")
   const [linksModal2, setLinksModal2] = useState("")
   const [timeModal, setTimeModal] = useState("")
   const[messageError, setMessageError] = useState("")
 
-  console.log()
-
   async function handleSubmit(e){
     e.preventDefault()
-    setLoading(true)
 
     if(linksModal1 != "" && linksModal2 != "" & name != "" && Number.isInteger(Number(timeModal))){
       try{
@@ -54,15 +52,12 @@ import DashboardIcon from "../../assets/icons/dashboard.svg"
           ]
         })
 
-        setLoading(false)
       }
       catch(err){
       setMessageError("Alguma coisa de errado no servidor")
-        setLoading(false)
         
       }
     }else{
-      setLoading(false)
       setMessageError("Alguma coisa deu errado, verifique os campos!")
       return
     }
@@ -123,8 +118,8 @@ import DashboardIcon from "../../assets/icons/dashboard.svg"
           }}>
             Fechar
           </Button>
-          <Button disabled={loading ? true : false} variant="primary" id="button-presentation" onClick={handleSubmit} hei>
-            {loading ? <Spinner id="spinner-loading" animation="grow" /> : <span>Criar Apresentação</span>}
+          <Button variant="primary" onClick={handleSubmit}>
+            Iniciar
           </Button>
         </Modal.Footer>
       </Modal>

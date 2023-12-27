@@ -1,16 +1,18 @@
-import React from 'react';
+import "./Tutorial.css"
 
-// assets
 import InstructionsIcon from "../../assets/instructions.png"
+import LogisticaDash from "../../assets/logisticaDash.png"
+import GlpiDash from "../../assets/glpiDash.png"
 
+import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
 
-// styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-import "./Tutorial.css"
+
+import { Pagination } from 'swiper/modules';
+
 
 function Tutorial(){
 
