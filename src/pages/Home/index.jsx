@@ -9,14 +9,12 @@ const Home = () => {
 
   const [showModal, setShowModal] = useContext(ModalContext)
 
-
-  const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
 
 
   return(
     <div id="container">
-        <Header handleShow={handleShow}/>
+        <Header />
         <ModalComponent show={showModal} handleClose={handleClose}/>
         <Main />
         <Footer />

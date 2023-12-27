@@ -1,37 +1,41 @@
-import Navbar from "react-bootstrap/Navbar";
-import Button from "react-bootstrap/Button";
-import { NavLink } from "react-bootstrap";
-import { useContext } from "react";
-import ModalContext from "../../contexts/ModalContext";
+import React, { useState } from 'react';
+import { Navbar, Form, Row, Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import ModalContext from '../../contexts/ModalContext';
+import PowerBiLogo from '../../assets/icons/power-bi.png';
+import PlusIcon from '../../assets/icons/plus-circle.svg';
+import './Style.css';
 
-import "./Style.css";
-
-import PowerBiLogo from "../../assets/icons/power-bi.png";
-import PlusIcon from "../../assets/icons/plus-circle.svg";
-import { Link } from "react-router-dom";
-
-function MenuNavbar() {
-
-  const [showModal, setShowModal] = useContext(ModalContext)
+function MenuNavbar({ setFilterTerm }) {
+  const [_, setShowModal] = useContext(ModalContext);
 
   const handleShow = () => setShowModal(true);
 
-  return (
- 
-        <Navbar id="container-nav" className="">
-          <div className="navigation">
-          <Link to="/">
-            <img src={PowerBiLogo} alt="DashboardSwiper" />
-          </Link>
 
-            <div className="dashboard-container" >
-              <NavLink className="dashboard-button" href="/dashboards" >Dashboards</NavLink>
-            </div>
-          </div>
-          <Button  variant="warning"  className="rounded-circle container-button" onClick={handleShow}>
-            <img src={PlusIcon} alt="plus icon" className="plus-icon" />
-          </Button>
-        </Navbar>
+  return (
+    <Navbar id="container-nav">
+      <div className="navigation">
+        <Link to="/">
+          <img src={PowerBiLogo} alt="DashboardSwiper" />
+        </Link>
+
+        <div className="dashboard-container">
+          <Link to="/dashboards" className="dashboard-button">
+            Dashboards
+          </Link>
+        </div>
+      </div>
+
+      
+      <Button
+        variant="warning"
+        className="rounded-circle container-button"
+        onClick={handleShow}
+      >
+        <img src={PlusIcon} alt="plus icon" className="plus-icon" />
+      </Button>
+    </Navbar>
   );
 }
 

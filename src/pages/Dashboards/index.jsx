@@ -7,13 +7,14 @@ import CardComponent from "../../components/Card";
 import { useContext } from "react";
 import ModalContext from "../../contexts/ModalContext";
 import ModalComponent from "../../components/Modal";
+import SearchFilter from "../../components/SearchFilter"; // Importe o componente de filtro
 
 import "./styles.css";
-import Spinner from 'react-bootstrap/Spinner';
 
 const Dashboards = () => {
   const [dashs, setDashs] = useState([]);
   const [showModal, setShowModal] = useContext(ModalContext);
+  const [search, setSearch] = useState("");
 
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
@@ -41,13 +42,20 @@ const Dashboards = () => {
     getData();
   }, []);
 
+  // Filtra os dashboards com base na pesquisa
+  const filteredDashboards = dashs.filter((dash) => {
+    const tituloDashboard = dash.dados.nome.toLowerCase();
+    return tituloDashboard.includes(search.toLowerCase());
+  });
+
   return (
     <main id="container">
       <Header handleShow={handleShow} />
+      <SearchFilter search={search} setSearch={setSearch} dashs={dashs} /> {/* Adicione o componente de filtro */}
       <ModalComponent setDashs={setDashs} show={showModal} handleClose={handleClose} />
       <div id="container-dashboards">
-        {dashs.length > 0 ? (
-          dashs.map((dash) => <CardComponent dash={dash} setDashs={setDashs} />)
+        {filteredDashboards.length > 0 ? (
+          filteredDashboards.map((dash) => <CardComponent dash={dash} setDashs={setDashs} />)
         ) : (
           <h1>Nenhum dashboard encontrado</h1>
         )}
