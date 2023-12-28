@@ -2,3 +2,8 @@
     width: 100%;
     flex-direction: column;
 }
+
+body {
+    height: 100%; 
+    overflow-y: auto; 
+}

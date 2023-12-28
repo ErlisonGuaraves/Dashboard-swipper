@@ -7,7 +7,7 @@ import PowerBiLogo from '../../assets/icons/power-bi.png';
 import PlusIcon from '../../assets/icons/plus-circle.svg';
 import './Style.css';
 
-function MenuNavbar({ setFilterTerm }) {
+function MenuNavbar() {
   const [_, setShowModal] = useContext(ModalContext);
 
   const handleShow = () => setShowModal(true);

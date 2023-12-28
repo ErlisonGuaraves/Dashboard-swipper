@@ -7,7 +7,7 @@ const Footer = () => {
             <span>
                 Feito por 
             </span>
-            <img src={DataMindsLogo} alt="" />
+            <img src={DataMindsLogo} alt="logo" />
         </footer>
     )
 }
