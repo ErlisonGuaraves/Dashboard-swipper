@@ -16,7 +16,7 @@ function App() {
   
   return (
     <>
-   <BrowserRouter basename="/dashboard-swiper">
+   <BrowserRouter basename="/">
    <ModalContextProvider>
       <Routes>
           <Route path="/" >
