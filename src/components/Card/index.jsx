@@ -1,13 +1,14 @@
-import React from 'react';
-import { Card, Button } from 'react-bootstrap';
-import { doc, deleteDoc } from 'firebase/firestore';
-import { db } from '../../connection/firebase';
-import './styles.css';
+import React from "react";
+import { Link } from 'react-router-dom';
+import { Card, Button } from "react-bootstrap";
+import { doc, deleteDoc } from "firebase/firestore";
+import { db } from "../../connection/firebase";
+import "./styles.css";
 
 const CardComponent = ({ dash, setDashs }) => {
   async function deleteCard() {
     try {
-      const dashRef = doc(db, 'dashboards', dash.id);
+      const dashRef = doc(db, "dashboards", dash.id);
       await deleteDoc(dashRef);
 
       setDashs((dashItem) => dashItem.filter((item) => item.id !== dash.id));
@@ -20,19 +21,20 @@ const CardComponent = ({ dash, setDashs }) => {
     <Card>
       <Card.Body id="container-cards">
         <Card.Title>{dash.dados.nome}</Card.Title>
-        <Card.Subtitle>Tempo de Transição: {dash.dados.time} segundos</Card.Subtitle>
+        <Card.Subtitle>
+          Tempo de Transição: {dash.dados.time} segundos
+        </Card.Subtitle>
         <div className="actions">
           <Button variant="danger" onClick={deleteCard}>
             Excluir
           </Button>
-          <a
-            variant="primary"
-            type="button"
-            target='_blank'
-            href={`#/presentation/${dash.id}`}
+          <Link
+            to={`/presentation/${dash.id}`}
+            className="btn text-primary" 
+            target="_blank"
           >
             Apresentar
-          </a>
+          </Link>
         </div>
       </Card.Body>
     </Card>
