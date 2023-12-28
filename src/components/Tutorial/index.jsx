@@ -21,7 +21,6 @@ function Tutorial(){
       };
 
     return(
-        <main id="container">
             <div className="content-instructions">
                 <h1 className="title">Instruções Para Criar Sua Apresentação <img src={InstructionsIcon} alt="Ícone que representa as instruções" /> </h1>
                 <ol className="instructions">
@@ -31,7 +30,6 @@ function Tutorial(){
                     <li>Clique em Apresentar</li>
                 </ol>
             </div>
-        </main>
     )
 }
 

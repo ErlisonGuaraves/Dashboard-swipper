@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { db } from "../../connection/firebase";
 import { collection, query, getDocs } from "firebase/firestore";
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import CardComponent from "../../components/Card";
 import { useContext } from "react";
 import ModalContext from "../../contexts/ModalContext";
@@ -16,7 +15,6 @@ const Dashboards = () => {
   const [showModal, setShowModal] = useContext(ModalContext);
   const [search, setSearch] = useState("");
 
-  const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
 
   useEffect(() => {
@@ -49,8 +47,7 @@ const Dashboards = () => {
   });
 
   return (
-    <main id="container">
-      <Header handleShow={handleShow} />
+    <>
       <SearchFilter search={search} setSearch={setSearch} dashs={dashs} /> {/* Adicione o componente de filtro */}
       <ModalComponent setDashs={setDashs} show={showModal} handleClose={handleClose} />
       <div id="container-dashboards">
@@ -60,8 +57,7 @@ const Dashboards = () => {
           <h1>Nenhum dashboard encontrado</h1>
         )}
       </div>
-      <Footer />
-    </main>
+    </>
   );
 };
 

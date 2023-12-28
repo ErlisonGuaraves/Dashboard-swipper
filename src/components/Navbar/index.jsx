@@ -8,6 +8,7 @@ import PlusIcon from '../../assets/icons/plus-circle.svg';
 import './Style.css';
 
 function MenuNavbar() {
+  
   const [_, setShowModal] = useContext(ModalContext);
 
   const handleShow = () => setShowModal(true);

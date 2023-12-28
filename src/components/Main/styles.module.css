@@ -1,0 +1,7 @@
+.container{
+    height: 100%;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}

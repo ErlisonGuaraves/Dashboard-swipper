@@ -1,16 +1,19 @@
 #container{
   display: flex;
-  height: 100vh;
+  flex-direction: column;
+  height: 100%;
 }
 
 #container-dashboards{
   margin-top: 40px;
-  display: grid;
-  place-items: center;
-  place-content: center;
-  grid-template-columns: auto auto auto;
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0 8rem;
+  margin-bottom: 40px;
 }
 
 

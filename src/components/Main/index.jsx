@@ -1,11 +1,12 @@
 import Tutorial from "../Tutorial";
+import styles from "./styles.module.css"
 
 
-const Main = () =>{
+const Main = ({children}) =>{
 
     return(
-        <main>
-            <Tutorial />
+        <main className={styles.container}>
+            {children}
         </main>
     )
 }

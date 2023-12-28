@@ -4,6 +4,8 @@ import Footer from "../../components/Footer";
 import ModalComponent from "../../components/Modal";
 import { useContext } from "react";
 import ModalContext from "../../contexts/ModalContext";
+import Tutorial from "../../components/Tutorial";
+import "./styles.css"
 
 const Home = () => {
 
@@ -13,12 +15,10 @@ const Home = () => {
 
 
   return(
-    <div id="container">
-        <Header />
+    <div id="container-instructions">
         <ModalComponent show={showModal} handleClose={handleClose}/>
-        <Main />
-        <Footer />
-  </div>
+        <Tutorial/>
+    </div>
   )
 }
 
