@@ -48,6 +48,7 @@ const Dashboards = () => {
 
   return (
     <>
+      <Header/>
       <SearchFilter search={search} setSearch={setSearch} dashs={dashs} /> {/* Adicione o componente de filtro */}
       <ModalComponent setDashs={setDashs} show={showModal} handleClose={handleClose} />
       <div id="container-dashboards">

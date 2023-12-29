@@ -25,7 +25,7 @@ function App() {
     <>
     <ModalContextProvider>
    <BrowserRouter basename="/">
-    <Header/>
+
     <Main>
         <Routes>
             <Route path="/" >
