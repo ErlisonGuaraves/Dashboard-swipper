@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { db } from "../../connection/firebase";
 import { collection, query, getDocs } from "firebase/firestore";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import CardComponent from "../../components/Card";
 import { useContext } from "react";
 import ModalContext from "../../contexts/ModalContext";
