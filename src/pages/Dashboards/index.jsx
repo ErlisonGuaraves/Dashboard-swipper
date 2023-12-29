@@ -58,6 +58,7 @@ const Dashboards = () => {
           <h1>Nenhum dashboard encontrado</h1>
         )}
       </div>
+      <Footer />
     </>
   );
 };

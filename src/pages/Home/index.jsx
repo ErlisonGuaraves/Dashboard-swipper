@@ -19,6 +19,7 @@ const Home = () => {
         <ModalComponent show={showModal} handleClose={handleClose} />
         <Tutorial />
       </div>
+      <Footer />
     </>
   );
 };

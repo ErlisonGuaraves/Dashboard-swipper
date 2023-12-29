@@ -35,7 +35,7 @@ function App() {
             <Route path="/presentation/:id" element={<Presentation time={time} links={links}/>} />
         </Routes>
        </Main>
-      <Footer />
+      
    </BrowserRouter>
    </ModalContextProvider>
     </>
